@@ -1,1 +1,3 @@
 https://guilhermeonrails.github.io/casadocodigo/livros.json
+
+A função map do javascript cria um novo array a partir do array base
