@@ -1,6 +1,7 @@
 let livros = []
 const endPointDaAPI = 'https://guilhermeonrails.github.io/casadocodigo/livros.json'
-const elementoParaInserirLivros = document.querySelector("#livros")
+const elementoParaInserirLivros = document.querySelector("#livros") // isso é a section dos livros
+const elementoComVaolrTotalDeLivrosDisponiveis = document.querySelector('#valor_total_livros_disponiveis')
 
 getBuscarLivrosDaAPI()
 
@@ -9,13 +10,20 @@ async function getBuscarLivrosDaAPI() {
     livros = await res.json()
     let livrosComDesconto = aplicarDesconto(livros)
     exibirLivrosNaTela(livrosComDesconto)
+    console.table(livros)
 }
 
 function exibirLivrosNaTela (listaDeLivros){
+    elementoComVaolrTotalDeLivrosDisponiveis.innerHTML = ""
+    elementoParaInserirLivros.innerHTML = "" // Quando essa função for chamada ela lima a área de vendas
     listaDeLivros.forEach(livro =>{
+        // let disponibilidade = verificarDisponibilidadeDoLivro (livro)
+
+        let disponibilidade = livro.quantidade > 0 ? "livro__imagens" : "livro__imagens indisponivel"
+// Operador ternário --> se a quantidade for maior que zero retona "livro__imagens" se não (:) retorna  "livro__imagens indisponivel"
         elementoParaInserirLivros.innerHTML += `
             <div class="livro">
-            <img class="livro__imagens" src="${livro.imagem}" alt="${livro.alt}" />
+            <img class="${disponibilidade}" src="${livro.imagem}" alt="${livro.alt}" />
             <h2 class="livro__titulo">
             ${livro.titulo}
             </h2>
@@ -29,12 +37,14 @@ function exibirLivrosNaTela (listaDeLivros){
     })
 }
 
+// criando um código mais elegante
 
-const arrayBase = [1, 2, 3, 4, 5, 6, 7]
-
-const mapTeste = arrayBase.map(elemento => elemento * 2) // escrevendo dessa maneira sem as chaves não precisa de return
-
-console.log(mapTeste)
-
+// function verificarDisponibilidadeDoLivro(livro){
+//     if(livro.quantidade > 0){
+//         return "livro__imagens"
+//     }else{
+//        return  "livro__imagens indisponivel"
+//     }
+// }
 
 

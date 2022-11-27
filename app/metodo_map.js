@@ -8,13 +8,13 @@ function aplicarDesconto (livros){
     return livrosComDesconto
 }
 
+// exemplo utilizando método map
+
+const arrayBase = [1, 2, 3, 4, 5, 6, 7]
+
+const mapTeste = arrayBase.map(elemento => elemento * 2) // escrevendo dessa maneira sem as chaves não precisa de return
+
+console.log(mapTeste)
 
 
-//Exemplo da utilização do método filter
 
-const idade = [10, 18, 20, 30, 17, 5]
-const podeDirigir = idade.filter(idade => {
-    return idade >= 18
-})
-
-console.log(podeDirigir)

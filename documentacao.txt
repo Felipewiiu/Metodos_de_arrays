@@ -1,0 +1,22 @@
+https://guilhermeonrails.github.io/casadocodigo/livros.json
+
+A função map do javascript cria um novo array a partir do array base
+
+Sobre a função de odenação SORT()***************************************************
+
+1- Primeiramente ela ordena os elementos dos arrays com base no unicode 
+
+2 - Para se ordenar os elementos de forma cresente é necessário se utilizar uma função como parâmetro mo sort()
+
+
+----------------------------------------------------------------------------------------------------------
+Exemplo:
+
+let precos = [5, 9,  55, 34, 10, 14]
+
+let precosOrdenados = precos.sort( (a, b) => a - b ) // não precisa de return pois está na mesma linha
+
+console.log(precosOrdenados)
+
+-----------------------------------------------------------------------------------------------------------
+
