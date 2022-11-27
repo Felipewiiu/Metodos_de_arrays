@@ -2,7 +2,9 @@ https://guilhermeonrails.github.io/casadocodigo/livros.json
 
 A função map do javascript cria um novo array a partir do array base
 
-Sobre a função de odenação SORT()***************************************************
+============================================================================================================
+
+Sobre a função de odenação SORT()
 
 1- Primeiramente ela ordena os elementos dos arrays com base no unicode 
 
@@ -19,4 +21,22 @@ let precosOrdenados = precos.sort( (a, b) => a - b ) // não precisa de return p
 console.log(precosOrdenados)
 
 -----------------------------------------------------------------------------------------------------------
+
+===============================================================================================================================
+
+
+A função reduce() serve para combinar os valores de um array ou para fazer as comparação para saber qual o maior ou menor valor
+
+--------------------------------------------------------------------------------------------------------------------------------
+Exemplo:
+
+const precos = [10, 20, 70]
+
+//const precoTotal = precos.reduce((acc, atual) => acc + atual)
+
+const precoTotal = precos.reduce((acc, atual) => acc > atual ? acc : atual)
+
+console.log(precoTotal) // valor retornado 100
+
+--------------------------------------------------------------------------------------------------------------------------------
 
